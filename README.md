@@ -1,113 +1,149 @@
-# Desafio Tetris Stack - Controle de Peças com Estruturas de Dados
+# 🎮 Tetris Stack - Sistema de Fila Circular
 
-Bem-vindo ao desafio **"Tetris Stack"**! Neste jogo inspirado nas mecânicas clássicas de montagem de peças, o jogador deve organizar, reservar e manipular peças em tempo real. Para isso, você, como programador, será responsável por implementar as estruturas de controle que regem a lógica das peças.
+## 📋 Descrição do Projeto
 
-A empresa **ByteBros**, especializada em jogos educacionais de lógica e programação, contratou você para desenvolver o sistema de gerenciamento de peças, utilizando estruturas como **fila circular** e **pilha**.
+O **Tetris Stack** é um projeto educacional desenvolvido pela ByteBros para ensinar conceitos fundamentais de estruturas de dados, especificamente **filas circulares**. O programa simula o sistema de peças futuras do jogo Tetris, onde as peças são organizadas em uma fila FIFO (First In, First Out).
 
-O desafio está dividido em três níveis: **Novato**, **Aventureiro** e **Mestre**, com cada nível adicionando mais complexidade ao anterior.  
-**Você deve escolher qual desafio deseja realizar.**
+## 🎯 Objetivos Educacionais
 
-🚨 **Atenção:** O nível Novato foca apenas na fila de peças, usando conceitos básicos de structs, arrays e modularização.
+- Compreender e implementar **estruturas de dados tipo fila**
+- Aprender sobre **fila circular** e suas vantagens
+- Praticar **manipulação de arrays** e **structs** em C#
+- Desenvolver habilidades de **modularização** e **documentação de código**
+- Aplicar **operadores lógicos e condicionais** para controle de fluxo
 
-## 🎮 Nível Novato: Fila de Peças Futuras
+## ⚙️ Funcionalidades Implementadas
 
-No nível Novato, você criará o sistema inicial de controle das peças futuras do jogo Tetris Stack. As peças possuem um **nome** (representando o tipo, como 'I', 'O', 'T', 'L') e um **id** exclusivo (identificador numérico).
+### 🔄 Operações da Fila
 
-🚩 **Objetivo:** Criar um programa em C que simula uma **fila circular** de 5 peças com as seguintes funcionalidades:
+- **Enqueue (Inserir)**: Adiciona nova peça ao final da fila
+- **Dequeue (Jogar)**: Remove peça da frente da fila
+- **Remover Específica**: Remove uma peça específica por ID mantendo a ordem da fila
+- **Visualizar**: Exibe estado atual da fila com todas as peças
 
-*   Visualizar a fila atual
-*   Jogar (remover) a peça da frente
-*   Inserir automaticamente uma nova peça no final da fila
+### 🎲 Sistema de Peças
 
-⚙️ **Funcionalidades do Sistema:**
+- **Tipos disponíveis**: I, O, T, L (formas clássicas do Tetris)
+- **IDs únicos**: Cada peça recebe um identificador sequencial
+- **Geração automática**: Peças são criadas aleatoriamente
 
-*   Inicializar a fila com 5 peças geradas automaticamente.
-*   Permitir que o usuário:
-    *   Jogue uma peça (dequeue)
-    *   Insira uma nova peça (enqueue)
-    *   Visualize o estado atual da fila
-*   Manter a fila circular, reaproveitando o espaço.
+### 🖥️ Interface de Usuário
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+- **Menu interativo** com 5 opções numeradas
+- **Feedback visual** com emojis e formatação
+- **Validação de entrada** com mensagens de erro claras
+- **Layout organizado** com bordas ASCII decorativas
+- **Seleção por ID** para remoção específica de peças
 
-*   O programa utiliza menus via terminal.
-*   A cada ação, o estado atualizado da fila é exibido com `printf`.
+## 🏗️ Estrutura do Código
 
-**Simplificações para o Nível Novato:**
+### 📦 Estruturas de Dados
 
-*   Trabalhe **apenas com a fila**.
-*   A fila deve conter **exatamente 5 elementos**.
-*   Use uma função `gerarPeca()` para criar automaticamente novas peças.
-*   Utilize structs e arrays. Não implemente pilha.
+```csharp
+/// Representa uma peça do Tetris
+public struct Peca
+{
+    public char tipo;    // Tipo da peça ('I', 'O', 'T', 'L')
+    public int id;       // Identificador único
+}
+```
 
-## 🛡️ Nível Aventureiro: Reserva de Peças com Pilha
+### 🔧 Componentes Principais
 
-No nível Aventureiro, você irá expandir o sistema com uma **pilha de reserva de peças**, que permite ao jogador guardar peças para uso posterior.
+1. **Fila Circular**: Array fixo com índices circulares
+2. **Controle de Estado**: Índices de frente e final
+3. **Validações**: Verificações de fila vazia/cheia
+4. **Interface**: Menu e exibição organizada
 
-🆕 **Diferença em relação ao Nível Novato:**
+## 🚀 Como Executar
 
-*   Introdução da **pilha linear** para reservar peças.
-*   A fila permanece sempre cheia com 5 peças.
+### Pré-requisitos
 
-⚙️ **Funcionalidades do Sistema:**
+- .NET SDK 6.0 ou superior
+- Terminal/Prompt de comando
 
-*   Além das opções anteriores, o usuário pode:
-    *   Reservar a peça da frente da fila (push)
-    *   Usar uma peça reservada (pop)
-*   A fila continua funcionando com inserção automática.
-*   A pilha tem **capacidade máxima de 3 peças**.
+### Passos de Execução
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+```bash
+# 1. Navegue até o diretório do projeto
+cd "d:\AulasFacul\dasfio-novato\TetrisStack"
 
-*   Menu com 4 opções:
-    * `1` - Jogar peça
-    * `2` - Reservar peça
-    * `3` - Usar peça reservada
-    * `0` - Sair
-*   O estado da fila e da pilha é exibido após cada ação.
+# 2. Execute o programa
+dotnet run
+```
 
-**Simplificações para o Nível Intermediário:**
+## 📖 Conceitos Técnicos Abordados
 
-*   A pilha não permite escolha da posição.
-*   O jogador **não escolhe o tipo da peça** — todas são geradas automaticamente.
-*   Não há comparação nem troca direta entre as estruturas.
+### 🔄 Fila Circular
 
-## 🏆 Nível Mestre: Integração Total com Estratégia
+- **Vantagem**: Reaproveitamento de espaço no array
+- **Implementação**: Uso do operador módulo (%) para índices
+- **Eficiência**: Operações O(1) para inserção e remoção
 
-No nível Mestre, você implementará uma **integração complexa** entre a fila e a pilha, simulando funcionalidades avançadas como **troca**, **desfazer** e **inversão de peças**.
+### 🏗️ Arquitetura Modular
 
-🆕 **Diferença em relação ao Nível Aventureiro:**
+- **Separação de responsabilidades**: Cada método tem função específica
+- **Encapsulamento**: Atributos privados com métodos públicos
+- **Reutilização**: Funções auxiliares para operações comuns
 
-*   Operações mais complexas e estratégicas entre as estruturas.
-*   Manipulação reversível do estado das peças.
+### ✅ Validação e Controle
 
-⚙️ **Funcionalidades do Sistema:**
+- **Verificação de limites**: Previne overflow e underflow
+- **Tratamento de erros**: Mensagens informativas para o usuário
+- **Fluxo controlado**: Switch-case para navegação no menu
 
-*   Menu com múltiplas ações:
-    * `1` - Jogar peça
-    * `2` - Reservar peça
-    * `3` - Usar peça reservada
-    * `4` - Trocar peça do topo da pilha com a da frente da fila
-    * `5` - Desfazer última jogada
-    * `6` - Inverter fila com pilha
-    * `0` - Sair
-*   Controle de fila circular e pilha de reserva com atualização a cada ação.
+## 📝 Requisitos Atendidos
 
-📥 **Entrada** e 📤 **Saída de Dados:**
+### ✅ Funcionais
 
-*   Mesmo estilo dos níveis anteriores.
-*   Agora exige controle total do fluxo e da memória entre as estruturas.
+- [x] Fila com capacidade fixa (5 peças)
+- [x] Operação jogar peça (dequeue)
+- [x] Operação inserir peça (enqueue)
+- [x] **NOVO**: Operação remover peça específica mantendo ordem
+- [x] Visualização do estado da fila
+- [x] Geração automática de peças
+- [x] IDs únicos para identificação
+- [x] Seleção por ID para remoção específica
 
-**Observações:**
+### ✅ Não Funcionais
 
-*   Cada operação deve ser segura e manter a integridade dos dados.
-*   A complexidade exige modularização clara e funções bem separadas.
+- [x] **Usabilidade**: Interface clara e intuitiva
+- [x] **Legibilidade**: Código bem estruturado e comentado
+- [x] **Documentação**: Comentários explicativos detalhados
+- [x] **Modularização**: Funções com responsabilidades específicas
+- [x] **Nomes descritivos**: Variáveis e métodos autoexplicativos
 
-## 🏁 Conclusão
+## 🎓 Aprendizados Práticos
 
-Ao concluir qualquer um dos níveis, você terá exercitado conceitos fundamentais de estrutura de dados, como **fila circular** e **pilha**, em um contexto prático de desenvolvimento de jogos.
+### 💡 Estruturas de Dados
 
-Boa sorte e divirta-se programando!
+- Como implementar uma fila usando arrays
+- Vantagens da fila circular sobre fila linear
+- Operações fundamentais: enqueue, dequeue, isEmpty, isFull
+- **NOVO**: Remoção específica com reorganização mantendo ordem
 
-Equipe de Ensino - ByteBros
+### 🔧 Programação em C#
 
+- Uso de structs para tipos de dados customizados
+- Implementação de métodos privados e públicos
+- Controle de fluxo com switch-case e operadores lógicos
+- **NOVO**: Algoritmos de busca e remoção em arrays circulares
+
+### 🎨 Design de Interface
+
+- Criação de menus interativos em console
+- Formatação com caracteres ASCII para visual atrativo
+- Feedback adequado para ações do usuário
+- **NOVO**: Interface de seleção por ID com validação
+
+## 👨‍💻 Sobre o Desenvolvimento
+
+**Desenvolvido por**: ByteBros  
+**Linguagem**: C#  
+**Paradigma**: Programação Orientada a Objetos  
+**Estrutura de Dados**: Fila Circular  
+**Propósito**: Educacional - Ensino de Programação
+
+---
+
+_Este projeto faz parte do currículo de ensino de lógica e programação, demonstrando na prática como estruturas de dados fundamentais são aplicadas em jogos e sistemas reais._

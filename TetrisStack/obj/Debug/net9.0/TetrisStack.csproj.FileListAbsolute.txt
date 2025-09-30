@@ -1,0 +1,14 @@
+D:\AulasFacul\dasfio-novato\TetrisStack\bin\Debug\net9.0\TetrisStack.exe
+D:\AulasFacul\dasfio-novato\TetrisStack\bin\Debug\net9.0\TetrisStack.deps.json
+D:\AulasFacul\dasfio-novato\TetrisStack\bin\Debug\net9.0\TetrisStack.runtimeconfig.json
+D:\AulasFacul\dasfio-novato\TetrisStack\bin\Debug\net9.0\TetrisStack.dll
+D:\AulasFacul\dasfio-novato\TetrisStack\bin\Debug\net9.0\TetrisStack.pdb
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.GeneratedMSBuildEditorConfig.editorconfig
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.AssemblyInfoInputs.cache
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.AssemblyInfo.cs
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.csproj.CoreCompileInputs.cache
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.dll
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\refint\TetrisStack.dll
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.pdb
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\TetrisStack.genruntimeconfig.cache
+D:\AulasFacul\dasfio-novato\TetrisStack\obj\Debug\net9.0\ref\TetrisStack.dll
